@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calc</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form id="calcForm">
+            <input type="text" name="firstnumber" id="firstnumber">
+            <select name="selectfeild" id="symbol">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+                <option>%</option>
+            </select>
+            <input type="text" name="secondnumber" id="secondnumber">
+            <input type="submit" value="Try me!" id="calcButton">
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+            let result;
+            
+            $("#calcButton").click(function() {
+                calc();
+            });
+
+            let calc = () => {
+                let a = $("#firstnumber").val();
+                let b = $("#secondnumber").val();
+                var c = $("#symbol").val();
+
+                if ((a >= 0) && (b >= 0) && (Number.isInteger(Number(a))) && (Number.isInteger(Number(b)))) {
+                    if (c == "+") {
+                        result = Number(a) + Number(b);
+                    }
+                    if (c == "-") {
+                        result = Number(a) - Number(b);
+                    }
+                    if (c == "*") {
+                        result = Number(a) * Number(b);
+                    }
+                    if ((c == "/") && (b != "0")) {
+                        result = Number(a) / Number(b);
+                    }
+                    if ((c == "%") && (b != "0")){
+                        result = Number(a) % Number(b);
+                    }
+                    if (((c == "/") || (c == "%")) && (b == "0")) {
+                        result = "It’s over 9000!"
+                    }
+                    console.log(result);
+                    alert(result);
+                }
+                else{
+                    alert("Error :(")
+                }  
+            }
+            setInterval(function () {
+                alert("Please, use me...");
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

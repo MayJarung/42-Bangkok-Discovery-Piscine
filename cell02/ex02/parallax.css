@@ -1,0 +1,50 @@
+body , html{
+    height: 100%;
+    margin: 0;
+}
+div{
+    display: block;
+}
+.parallaximg1 , .parallaximg2 , .parallaximg3{
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.80;
+}
+.parallaximg1{
+    background-image: url(https://i.pinimg.com/564x/26/ad/38/26ad38213ab7ea33be75c708bdef2e0d.jpg);
+}
+.parallaximg2{
+    background-image: url(https://i.pinimg.com/564x/c5/3a/c2/c53ac290c378d248e09239f5184ca30e.jpg);
+}
+.parallaximg3{
+    background-image: url(https://i.pinimg.com/564x/fb/42/b9/fb42b9295f6f7c2d06e3419701e8f2ea.jpg);
+}
+.textcenter1 , .textcenter2 , .textcenter3{
+    text-align: center;
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.textcenter1 span.border , .textcenter2 span.border , .textcenter3 span.border{
+    background-color: black;
+    opacity: 0.80;
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+.textbox1 , .textbox2{
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 25px;
+    background-color: black;
+    color: white;
+    opacity: 0.90;
+}
+
